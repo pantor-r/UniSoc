@@ -1,9 +1,10 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TextInput, TouchableOpacity, json, TouchableHighlight, loginBtn, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TextInput, TouchableOpacity, json, TouchableHighlight, loginBtn, AsyncStorage, ScrollView } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
 function LoginScreen({ navigation }) {
 
@@ -134,29 +135,24 @@ function Societies({ navigation }) {
         <Text style={styles.SocText}>Soc5</Text>
       </TouchableHighlight>
       <TouchableHighlight
-        onPress={() => navigation.navigate('Soc6')}
-        style={styles.Soc}>
-        <Text style={styles.SocText}>Soc6</Text>
+        onPress={() => navigation.navigate('Homescreen')}
+        style={styles.Home}>
+        <Text style={styles.HomeText}>Home</Text>
       </TouchableHighlight>
+    </View>
+  );
+}
+
+function Notifications({ navigation }) {
+  
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo2}> UniSoc</Text>
+
       <TouchableHighlight
-        onPress={() => navigation.navigate('Soc7')}
+        onPress={() => navigation.navigate('Soc1')}
         style={styles.Soc}>
-        <Text style={styles.SocText}>Soc7</Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        onPress={() => navigation.navigate('Soc8')}
-        style={styles.Soc}>
-        <Text style={styles.SocText}>Soc8</Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        onPress={() => navigation.navigate('Soc9')}
-        style={styles.Soc}>
-        <Text style={styles.SocText}>Soc9</Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        onPress={() => navigation.navigate('Soc10')}
-        style={styles.Soc}>
-        <Text style={styles.SocText}>Soc10</Text>
+        <Text style={styles.SocText}>Soc1</Text>
       </TouchableHighlight>
       <TouchableHighlight
         onPress={() => navigation.navigate('Homescreen')}
@@ -166,17 +162,196 @@ function Societies({ navigation }) {
     </View>
   );
 }
-//function DetailsScreen({ navigation }) {
-  //return (
- 
- // );
-//}
 
-//function FiltersScreen({ navigation }) {
-  //return (
- 
- // );
-//}
+function UniAdmin({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo2}> UniSoc</Text>
+      <Text style={styles.logo4}> University Admin </Text>
+      <Text style={styles.logo3}> University:</Text>
+    
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Societies')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>View All Societies</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('CreateSoc')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Create Society</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('DeleteSoc')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Delete Society</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Homescreen')}
+        style={styles.Home}>
+        <Text style={styles.HomeText}>Home</Text>
+      </TouchableHighlight>
+    </View>
+  );
+}
+
+function Students({ navigation }) {
+  return (
+    <View style={styles.container2}>
+      <Text style={styles.logo2}> UniSoc</Text>
+      <Text style={styles.logo4}> Students:</Text>
+      <ScrollView>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student1')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student1</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student2')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student2</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student3')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student3</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student4')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student4</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student5')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student5</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student6')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student6</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student7')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student7</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student8')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student8</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student9')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student9</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Student10')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Student10</Text>
+      </TouchableHighlight>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Homescreen')}
+        style={styles.Home}>
+        <Text style={styles.HomeText}>Home</Text>
+      </TouchableHighlight>
+      </ScrollView>
+    </View>
+  );
+}
+
+function Event({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo2}> UniSoc</Text>
+      <Text style={styles.logo3}> Event: </Text>
+      <Text style={styles.logo3}> Date: </Text>
+      <Text style={styles.logo3}> Time: </Text>
+      <Text style={styles.logo3}> Location: </Text>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Soc5')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Soc5</Text>
+      </TouchableHighlight>
+            <TouchableHighlight
+        onPress={() => navigation.navigate('Homescreen')}
+        style={styles.Home}>
+        <Text style={styles.HomeText}>Home</Text>
+      </TouchableHighlight>
+
+     </View>
+  );
+}
+
+function CreateEvent({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo2}> UniSoc</Text>
+      <Text style={styles.logo4}> Create Event </Text>
+        <View style={styles.inputView} >
+          <TextInput  
+            style={styles.inputText}
+            placeholder="Date" 
+            placeholderTextColor="#003f5c"
+            onChangeText={text => this.setState({user:text})}/>
+        </View>
+        <View style={styles.inputView} >
+          <TextInput  
+            style={styles.inputText}
+            placeholder="Time" 
+            placeholderTextColor="#003f5c"
+            onChangeText={text => this.setState({user:text})}/>
+        </View>
+        <View style={styles.inputView} >
+          <TextInput  
+            style={styles.inputText}
+            placeholder="Location" 
+            placeholderTextColor="#003f5c"
+            onChangeText={text => this.setState({user:text})}/>
+        </View>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Event')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Create</Text>
+      </TouchableHighlight>
+     </View>
+  );
+}
+
+function CreateSoc({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo2}> UniSoc</Text>
+      <Text style={styles.logo4}> Create Society </Text>
+        <View style={styles.inputView} >
+          <TextInput  
+            style={styles.inputText}
+            placeholder="Name:" 
+            placeholderTextColor="#003f5c"
+            onChangeText={text => this.setState({user:text})}/>
+        </View>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Society')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Create</Text>
+      </TouchableHighlight>
+     </View>
+  );
+}
+
+function DeleteSoc({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo2}> UniSoc</Text>
+      <Text style={styles.logo4}> Delete Society </Text>
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Delete')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Create</Text>
+      </TouchableHighlight>
+     </View>
+  );
+}
 
 const Stack = createStackNavigator();
 
@@ -205,7 +380,7 @@ export default class App extends React.Component {
        dataSource: responseJson
       })
     })
-    .catch(error => console.log(error)) //to catch the errors if any
+    .catch(error => console.log(error)) 
     }
 
   render(){
@@ -236,6 +411,56 @@ export default class App extends React.Component {
           headerTransparent: true
         }}
       />
+      <Stack.Screen 
+        name = "Notifications" 
+        component = {Notifications} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+
+      <Stack.Screen 
+        name = "UniAdmin" 
+        component = {UniAdmin} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "Students" 
+        component = {Students} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "DeleteSoc" 
+        component = {DeleteSoc} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "CreateSoc" 
+        component = {CreateSoc} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "CreateEvent" 
+        component = {CreateEvent} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "Event" 
+        component = {Event} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
       </Stack.Navigator>
     </NavigationContainer>
     );
@@ -248,6 +473,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#003f5c',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  container2: {
+    flex: 1,
+    backgroundColor: '#003f5c',
   },
   logo:{
     fontWeight:"bold",
@@ -284,13 +513,6 @@ const styles = StyleSheet.create({
   },
   loginText:{
     color:"white"
-  },
-  logo2: {
-    fontWeight: 'bold',
-    fontSize: 50,
-    color: '#20b2aa',
-    marginBottom: 40,
-    alignSelf:"flex-start",
   },
   StudentsBt: {
     width: '80%',
@@ -330,6 +552,20 @@ const styles = StyleSheet.create({
     color: '#20b2aa',
     marginBottom: 40,
     alignSelf:"flex-start",
+  },
+  logo3: {
+    fontWeight: 'bold',
+    fontSize: 25,
+    color: '#20b2aa',
+    marginBottom: 40,
+    alignSelf:"flex-start",
+  },
+  logo4: {
+    fontWeight: 'bold',
+    fontSize: 35,
+    color: '#20b2aa',
+    marginBottom: 40,
+    alignSelf:"center",
   },
   Soc: {
     width: '80%',
