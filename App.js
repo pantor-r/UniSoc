@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, FlatList, TextInput, TouchableOpacity, json, TouchableHighlight, loginBtn, AsyncStorage, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Image, FlatList, TextInput, TouchableOpacity, json, TouchableHighlight, loginBtn, AsyncStorage, ScrollView } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
@@ -65,15 +65,15 @@ function HomeScreen({ navigation }) {
       <Text style={styles.logo2}> UniSoc</Text>
 
       <TouchableHighlight
-        onPress={() => navigation.navigate('Profilepage')}
+        onPress={() => navigation.navigate('MyProfile')}
         style={styles.StudentsBt}>
         <Text style={styles.HomeText}>Profile page</Text>
       </TouchableHighlight>
 
       <TouchableHighlight
-        onPress={() => navigation.navigate('Notifications')}
+        onPress={() => navigation.navigate('UniAdmin')}
         style={styles.StudentsBt}>
-        <Text style={styles.HomeText}>Notifications</Text>
+        <Text style={styles.HomeText}>UniAdmin</Text>
       </TouchableHighlight>
 
       <TouchableHighlight
@@ -103,14 +103,78 @@ function HomeScreen({ navigation }) {
   );
 }
 
+function MyProfile ({ navigation }){
+return (
+  <View style={styles.container}>
+      <View style={styles.header}></View>
+      <Image style={styles.tinyLogo} source={require('./profile.jpg')}/> 
+      <View style={styles.body}>
+        <View style={styles.bodyContent}>
+          <Text style={styles.name}>Mr Nobody</Text>
+          <Text style={styles.info}>BSc Computer Science student</Text>
+          <Text style={styles.description}>Hi Stalker! ;)</Text>
+          <TouchableOpacity style={styles.buttonContainer}>
+            <Text>Option 1</Text>  
+          </TouchableOpacity>              
+        </View>
+    </View>
+  </View>
+);
+}
+
+function Timetables({ navigation }){
+  return (
+    <View style={styles.container}>
+      <Calendar style={styles.calendar}
+          current={'2020-05-01'}
+          markingType={'multi-dot'}
+          markedDates={{
+              '2020-05-08': {
+          selected: true,
+          dots: [
+                  {key: 'vacation', color: 'blue', selectedDotColor: 'white'}, 
+                  {key: 'massage', color: 'red', selectedDotColor: 'white'}
+                ]
+          },
+              '2020-05-09': {
+          disabled: true,
+          dots: [
+                  {key: 'vacation', color: 'green', selectedDotColor: 'red'}, 
+                  {key: 'massage', color: 'red', selectedDotColor: 'green'}
+                ]
+          }
+}}
+/>
+</View>
+);
+}
+function Society ({ navigation }){
+  return (
+    <View style={styles.container}>
+        <View style={styles.header}></View>
+        <Image style={styles.tinyLogo} source={require('./filmsoc_logo2.jpg')}/> 
+        <View style={styles.body}>
+          <View style={styles.bodyContent}>
+            <Text style={styles.name}>Film and Filmmakers Society</Text>
+            <Text style={styles.info}>Description: </Text>
+            <Text style={styles.description}>Film and Filmmakers society is the joining of the film society and the student filmmakers group, both of which have started in the last two years an have grown into a lovely crew of film enthusiasts. Our aims for the year are to bring people together to watch, talk about and make movies. We hope to build on the success of the previous years and build an encouraging space for  many people to get involved. We hope to see you at our next event!
+            Email: Film@society.liverpoolguild.org</Text>
+            <TouchableOpacity style={styles.buttonContainer}>
+            <Text>Join Society</Text>  
+          </TouchableOpacity>              
+          </View>
+      </View>
+    </View>
+);
+}
+
 function Societies({ navigation }) {
-  
   return (
     <View style={styles.container}>
       <Text style={styles.logo2}> UniSoc</Text>
 
       <TouchableHighlight
-        onPress={() => navigation.navigate('Soc1')}
+        onPress={() => navigation.navigate('Society')}
         style={styles.Soc}>
         <Text style={styles.SocText}>Soc1</Text>
       </TouchableHighlight>
@@ -133,26 +197,6 @@ function Societies({ navigation }) {
         onPress={() => navigation.navigate('Soc5')}
         style={styles.Soc}>
         <Text style={styles.SocText}>Soc5</Text>
-      </TouchableHighlight>
-      <TouchableHighlight
-        onPress={() => navigation.navigate('Homescreen')}
-        style={styles.Home}>
-        <Text style={styles.HomeText}>Home</Text>
-      </TouchableHighlight>
-    </View>
-  );
-}
-
-function Notifications({ navigation }) {
-  
-  return (
-    <View style={styles.container}>
-      <Text style={styles.logo2}> UniSoc</Text>
-
-      <TouchableHighlight
-        onPress={() => navigation.navigate('Soc1')}
-        style={styles.Soc}>
-        <Text style={styles.SocText}>Soc1</Text>
       </TouchableHighlight>
       <TouchableHighlight
         onPress={() => navigation.navigate('Homescreen')}
@@ -273,8 +317,8 @@ function Event({ navigation }) {
         style={styles.Soc}>
         <Text style={styles.SocText}>Soc5</Text>
       </TouchableHighlight>
-            <TouchableHighlight
-        onPress={() => navigation.navigate('Homescreen')}
+      <TouchableHighlight
+        onPress={() => navigation.navigate('HomeScreen')}
         style={styles.Home}>
         <Text style={styles.HomeText}>Home</Text>
       </TouchableHighlight>
@@ -411,13 +455,6 @@ export default class App extends React.Component {
           headerTransparent: true
         }}
       />
-      <Stack.Screen 
-        name = "Notifications" 
-        component = {Notifications} 
-        options = {{
-          headerTransparent: true
-        }}
-      />
 
       <Stack.Screen 
         name = "UniAdmin" 
@@ -457,6 +494,27 @@ export default class App extends React.Component {
       <Stack.Screen 
         name = "Event" 
         component = {Event} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "MyProfile" 
+        component = {MyProfile} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "Society" 
+        component = {Society} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "Timetables"
+        component = {Timetables} 
         options = {{
           headerTransparent: true
         }}
@@ -541,7 +599,7 @@ const styles = StyleSheet.create({
     fontSize:19,
     fontStyle: 'italic',
   },
-    HomeText2: {
+  HomeText2: {
     color: 'black',
     fontSize: 15,
     fontStyle: 'italic',
@@ -599,4 +657,66 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontStyle: 'italic',
   },
+  tinyLogo: {
+    width: 130,
+    height: 130,
+    borderRadius: 63,
+    borderWidth: 4,
+    borderColor: "white",
+    marginBottom:10,
+    alignSelf:'center',
+    position: 'absolute',
+    marginTop:130,
+    top: 0
+  },
+  name:{
+    fontSize:22,
+    fontWeight:'600',
+  },
+  body:{
+    marginTop:40,
+    top: 200
+  },
+  bodyContent: {
+    flex: 1,
+    alignItems: 'center',
+    padding:30,
+  },
+  name:{
+    fontSize:28,
+    color: "white",
+    fontWeight: "600"
+  },
+  info:{
+    fontSize:16,
+    color: "#00BFFF",
+    marginTop:10
+  },
+  description:{
+    fontSize:16,
+    color: "white",
+    marginTop:10,
+    textAlign: 'center'
+  },
+  buttonContainer: {
+    marginTop:10,
+    height:45,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom:20,
+    width:250,
+    borderRadius:30,
+    backgroundColor: "#00BFFF",
+  },
+  calendar: {
+    marginBottom: 0,
+    bottom: 100
+  },
+  text: {
+    textAlign: 'center',
+    padding: 10,
+    color: 'white',
+    fontSize: 16
+  }
 });
