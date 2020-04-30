@@ -449,6 +449,12 @@ export default class App extends React.Component {
         }}
       />
       <Stack.Screen 
+        name = "LoginScreen" 
+        component = {LoginScreen} 
+        options = {{
+          headerTransparent: true}}
+        />
+      <Stack.Screen 
         name = "Societies" 
         component = {Societies} 
         options = {{
