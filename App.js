@@ -3,32 +3,258 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, FlatList, TextInput, TouchableOpacity, json, TouchableHighlight, loginBtn, AsyncStorage, ScrollView } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 
+function Help({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.logo2}> UniSoc</Text>
+      <ScrollView>
+      <Text style={styles.logo4}> User Manual </Text>
+      <Text style={styles.text1}>
+  
+ UniSoc is an app designed to replace the current outdated and impractical systems used by the clubs & societies in universities across the country. Its main goal is to facilitate the cooperation and sharing of information between students, universities, societies and clubs.
+ It is created for university students that want to communicate easily with their societies regarding events, meetings and updates.
+ </Text>
+ <Text style={styles.text1}>
+ 1.       Student view:
+ </Text>
+ <Text style={styles.text1}>
+ a.       Log In Screen
+ </Text>
+ <Text style={styles.text1}>
+  
+ When first opening the app, the login page will be loaded. You need to log in using your university credentials: email and password.
+ If the introduced data is correct, you will be directed to the HomeScreen.
+ If the introduced data is wrong, log in will be denied and you will be asked to retry.
+ In case you forgot your password, click the “Forgot Password” button, which will redirect you to the university’s forgot password website.
+ </Text>
+ <Text style={styles.text1}>
+ b.       Home Screen
+ </Text>
+ <Text style={styles.text1}>
+ This is the main menu of the app.
+ By clicking the “Profile page” button, you will be directed to your profile page.
+ By clicking the “Notifications” button, you will be directed to your notifications page, where you can see the latest updates from all the societies you are a member of.
+ By clicking the “Timetable” button, you will be directed to your timetable, where you can see all the events that you are planning to participate at.
+ By clicking the “Societies” button, you will be directed to the main societies page, where you can search for any society.
+ By clicking the “Students” button, you will be directed to the main students page, where you can search any student.
+ By clicking the “Log out” button, you will be logging out of the app, and you will be sent to the Log in page.
+ By clicking the “Help” button, you will be directed to the in app User Manual.
+ </Text>
+ <Text style={styles.text1}>
+       c.       Profile page
+ </Text>
+ <Text style={styles.text1}>
+ This is your profile page.
+ Here you can see, and edit, your profile photo and your description.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ d.       Notifications
+ </Text>
+ <Text style={styles.text1}>
+ Here are all your notifications, starting from the most recent one, from all the clubs and societies you are a part of.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ e.       Timetable
+ </Text>
+ <Text style={styles.text1}>
+ In this page you’ll find a timetable of all the events you said you will participate at.
+ You can see them by clicking on a specific date.
+ You can click the arrow in the upper bar to change the month you are viewing.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ f.        Societies
+ </Text>
+ <Text style={styles.text1}>
+ Here is a list of all the societies in Alphabetical order.
+ By clicking on a society, you will be directed to its own page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ g.       Students
+ </Text>
+ <Text style={styles.text1}>
+ Here is a list of all the students in Alphabetical order.
+ By clicking on a student, you will be directed to its own profile page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ h.       Society
+ </Text>
+ <Text style={styles.text1}>
+ This is a society’s page.
+ You can see the photo, description, as well as the future events.
+ You can click on the Join button to join the society.
+ By clicking on an event, you will be directed to its own page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ i.         Event
+ </Text>
+ <Text style={styles.text1}>
+ On this page you can see the photo and details of an event.
+ You can click to participate on the participate button. (you will be able to see the event in your calendar from now on)
+ By clicking the “Society” button you will be taken to the society page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+  
+ 2.       Society Admin view:
+ </Text>
+ <Text style={styles.text1}>
+ a.       Log In Screen
+ </Text>
+ <Text style={styles.text1}>
+ When first opening the app, the log in page will be loaded. You need to log in using your university credentials: username and password.
+ If the introduced data is correct, you will be directed to the HomeScreen.
+ If the introduced data is wrong, log in will be denied and you will be asked to retry.
+ In case you forgot your password, click the “Forgot Password” button, which will redirect you to the university’s forgot password website.
+ </Text>
+ <Text style={styles.text1}>
+ b.       Home Screen
+ </Text>
+ <Text style={styles.text1}>
+ This is the main menu of the app.
+ By clicking the “Profile page” button, you will be directed to your profile page.
+ By clicking the “Notifications” button, you will be directed to your notifications page, where you can see the latest updates from all the societies you are a member of.
+ By clicking the “Timetable” button, you will be directed to your timetable, where you can see all the events that you are planning to participate at.
+ By clicking the “Societies” button, you will be directed to the main societies page, where you can search for any society.
+ By clicking the “Students” button, you will be directed to the main students page, where you can search any student.
+ By clicking the “Log out” button, you will be logging out the app,  and you will be sent to the Log in page.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+  
+ c.       Profile page
+ </Text>
+ <Text style={styles.text1}>
+ This is your profile page.
+ Here you can see your profile photo and your description.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ d.       Notifications
+ </Text>
+ <Text style={styles.text1}>
+ Here are all your notifications, starting from the most recent one, from all the clubs and societies you are a part of.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ e.       Timetable
+ </Text>
+ <Text style={styles.text1}>
+ In this page you’ll find a timetable of all the events you said you will participate at.
+ You can see them by clicking on a specific date.
+ You can click the arrow in the upper bar to change the month you are viewing.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ f.        Societies
+ </Text>
+ <Text style={styles.text1}>
+ Here is a list of all the societies in Alphabetical order.
+ By clicking on a society, you will be directed to its own page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ If you are the admin of this society, you will also have the “Create Event” and “Update Event” buttons.
+ By clicking the “Create Event”, you will be directed to the Create Event page, where you can create an event.
+ By clicking the “Update Event”, you will be directed to the Update Event page, where you can update the details of an event.
+ </Text>
+ <Text style={styles.text1}>
+ g.       Students
+ </Text>
+ <Text style={styles.text1}>
+ Here is a list of all the students in Alphabetical order.
+ By clicking on a student, you will be directed to its own profile page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ h.       Society
+ </Text>
+ <Text style={styles.text1}>
+ This is a society’s page.
+ You can see the photo, description, as well as the future events.
+ You can click on the Join button to join the society.
+ By clicking on an event, you will be directed to its own page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ i.         Event
+ </Text>
+ <Text style={styles.text1}>
+ On this page you can see the photo and details of an event.
+ You can click to participate on the participate button. (you will be able to see the event in your calendar from now on)
+ By clicking the “Society” button you will be taken to the society page.
+ By clicking the “Home” button, you will be directed to the Home Screen.
+ By clicking the “Help” button, you will be directed to the User Manual.
+ </Text>
+ <Text style={styles.text1}>
+ j.         Create Event
+ </Text>
+ <Text style={styles.text1}>
+ On this page you can create an event by filling in the details in the specific containers.
+ By clicking the button “Create event”, the event will be created, and it will appear on the society’s page. You will also be directed to the event page.
+ </Text>
+ <Text style={styles.text1}>
+ k.       Update Event
+ </Text>
+ <Text style={styles.text1}>
+ On this page you can update an event by filling in the details in the specific containers.
+ By clicking the button “Update event”, the event will be updated, and it will appear on the society’s page. You will also be directed to the event page.
+ By clicking the button “Delete event”, the event will be deleted and you will be directed to the society’s page.
+ </Text>
+ <Text style={styles.text1}>
+ 3.       University Admin view:
+ </Text>
+ <Text style={styles.text1}>
+ a.       Log In Screen
+ </Text>
+ <Text style={styles.text1}>
+ When first opening the app, the log in page will be loaded. You need to introduce your university credentials: username and password.
+ If the introduced data is correct, you will be directed to the HomeScreen.
+ If the introduced data is wrong, log in will be denied and you will be asked to retry.
+ In case you forgot your password, click the “Forgot Password” button, which will redirect you to the university’s forgot password website.
+ </Text>
+ <Text style={styles.text1}>
+ b.       Home Screen
+ </Text>
+ <Text style={styles.text1}>
+ This is the main menu of the app.
+ By clicking the “University profile page” button, you will be directed to your university’s profile page.
+ By clicking the “Create Society” button, you will be directed to the Create Society page.
+ By clicking the “Delete Society” button, you will be directed to the Create Society page.
+ By clicking the “Log out” button, you will be logging out the app,  and you will be sent to the Log in page.
+ By clicking the “Help” button, you will be directed to the User Manual.
+  
+       </Text>
+       
+      <TouchableHighlight
+        onPress={() => navigation.navigate('HomeScreen')}
+        style={styles.Soc}>
+        <Text style={styles.SocText}>Home</Text>
+      </TouchableHighlight>
+      </ScrollView>
+     </View>
+  );
+ }
+ 
 function LoginScreen({ navigation }) {
-
-  state = {
-    user:" ",
-    password:" ",
-    message:" ",
-    loading:false
-  }
-
-  fetch("https://www.mockapi.io/clone/5ddbb358041ac10014de140c", {
-    method: 'post',
-    headers: {
-      "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-    },
-    body: 'foo=bar&lorem=ipsum'
-  })
-  .then(json)
-  .then(function (data) {
-    console.log('Request succeeded with JSON response', JSON.stringify(data));
-  })
-  .catch(function (error) {
-    console.log('Request failed', JSON.stringify(error));
-  });
 
   return (
     <View style={styles.container}>
@@ -38,15 +264,15 @@ function LoginScreen({ navigation }) {
             style={styles.inputText}
             placeholder="User:" 
             placeholderTextColor="#003f5c"
-            onChangeText={text => this.setState({user:text})}/>
+            onChangeText={name => this.setState({UserName: name})}/>
         </View>
         <View style={styles.inputView} >
           <TextInput  
-            secureTextEntry
             style = {styles.inputText}
             placeholder="Password:" 
             placeholderTextColor="#003f5c"
-            onChangeText={text => this.setState({password:text})}/>
+            secureTextEntry={true}
+            onChangeText={password => this.setState({UserPassword: password})}/>
         </View>
         <TouchableOpacity>
           <Text style={styles.forgot}>Forgot Password?</Text>
@@ -148,6 +374,7 @@ function Timetables({ navigation }){
 </View>
 );
 }
+
 function Society ({ navigation }){
   return (
     <View style={styles.container}>
@@ -401,31 +628,42 @@ const Stack = createStackNavigator();
 
 export default class App extends React.Component {
 
-  state = {
-    user:"",
-    password:"",
-    message:"",
-    loading:false
-  }
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
-      loading: true,
-      dataSource:[]
-     };
-   }
+                UserName: '',
+                  UserEmail: '',
+                  UserPassword: '',
+}
+  }
 
-   componentDidMount(){
-    fetch("https://5ddbb358041ac10014de140b.mockapi.io/spot")
-    .then(response => response.json())
-    .then((responseJson) => {
-      this.setState({
-       loading: false,
-       dataSource: responseJson
-      })
-    })
-    .catch(error => console.log(error)) 
-    }
+  UserRegistrationFunction = () =>{
+ 
+    fetch('sql7334667@ec2-52-8-112-233.us-west-1.compute.amazonaws.com', {
+            method: 'POST',
+            headers: {
+                      'Accept': 'application/json',
+                      'Content-Type': 'application/json',
+                    },
+            body: JSON.stringify({
+                  
+            name: this.state.UserName,
+                  
+            email: this.state.UserEmail,
+                  
+            password: this.state.UserPassword
+                  
+                    })
+                  
+            }).then((response) => response.json())
+                    .then((responseJson) => {
+                  
+                    Alert.alert(responseJson);
+                  
+                      }).catch((error) => {
+                          console.error(error);
+                      });
+                }
 
   render(){
     return (
@@ -521,6 +759,13 @@ export default class App extends React.Component {
       <Stack.Screen 
         name = "Timetables"
         component = {Timetables} 
+        options = {{
+          headerTransparent: true
+        }}
+      />
+      <Stack.Screen 
+        name = "Help"
+        component = {Help} 
         options = {{
           headerTransparent: true
         }}
