@@ -8,7 +8,6 @@ import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
 function Help({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo2}> UniSoc</Text>
       <ScrollView>
       <Text style={styles.logo4}> User Manual </Text>
       <Text style={styles.text1}>
@@ -17,10 +16,10 @@ function Help({ navigation }) {
  It is created for university students that want to communicate easily with their societies regarding events, meetings and updates.
  </Text>
  <Text style={styles.text1}>
- 1.       Student view:
+ 1.      Student view:
  </Text>
  <Text style={styles.text1}>
- a.       Log In Screen
+a.   Log In Screen
  </Text>
  <Text style={styles.text1}>
   
@@ -30,7 +29,7 @@ function Help({ navigation }) {
  In case you forgot your password, click the “Forgot Password” button, which will redirect you to the university’s forgot password website.
  </Text>
  <Text style={styles.text1}>
- b.       Home Screen
+ b.  Home Screen
  </Text>
  <Text style={styles.text1}>
  This is the main menu of the app.
@@ -43,7 +42,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the in app User Manual.
  </Text>
  <Text style={styles.text1}>
-       c.       Profile page
+c.   Profile page
  </Text>
  <Text style={styles.text1}>
  This is your profile page.
@@ -52,7 +51,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- d.       Notifications
+ d.  Notifications
  </Text>
  <Text style={styles.text1}>
  Here are all your notifications, starting from the most recent one, from all the clubs and societies you are a part of.
@@ -60,7 +59,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- e.       Timetable
+ e.  Timetable
  </Text>
  <Text style={styles.text1}>
  In this page you’ll find a timetable of all the events you said you will participate at.
@@ -70,7 +69,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- f.        Societies
+ f.  Societies
  </Text>
  <Text style={styles.text1}>
  Here is a list of all the societies in Alphabetical order.
@@ -79,7 +78,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- g.       Students
+ g.  Students
  </Text>
  <Text style={styles.text1}>
  Here is a list of all the students in Alphabetical order.
@@ -88,7 +87,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- h.       Society
+ h.  Society
  </Text>
  <Text style={styles.text1}>
  This is a society’s page.
@@ -99,7 +98,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- i.         Event
+ i.  Event
  </Text>
  <Text style={styles.text1}>
  On this page you can see the photo and details of an event.
@@ -113,7 +112,7 @@ function Help({ navigation }) {
  2.       Society Admin view:
  </Text>
  <Text style={styles.text1}>
- a.       Log In Screen
+ a.   Log In Screen
  </Text>
  <Text style={styles.text1}>
  When first opening the app, the log in page will be loaded. You need to log in using your university credentials: username and password.
@@ -122,7 +121,7 @@ function Help({ navigation }) {
  In case you forgot your password, click the “Forgot Password” button, which will redirect you to the university’s forgot password website.
  </Text>
  <Text style={styles.text1}>
- b.       Home Screen
+ b.   Home Screen
  </Text>
  <Text style={styles.text1}>
  This is the main menu of the app.
@@ -135,8 +134,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
-  
- c.       Profile page
+ c.   Profile page
  </Text>
  <Text style={styles.text1}>
  This is your profile page.
@@ -145,7 +143,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- d.       Notifications
+ d.   Notifications
  </Text>
  <Text style={styles.text1}>
  Here are all your notifications, starting from the most recent one, from all the clubs and societies you are a part of.
@@ -153,7 +151,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- e.       Timetable
+ e.   Timetable
  </Text>
  <Text style={styles.text1}>
  In this page you’ll find a timetable of all the events you said you will participate at.
@@ -163,7 +161,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- f.        Societies
+ f.   Societies
  </Text>
  <Text style={styles.text1}>
  Here is a list of all the societies in Alphabetical order.
@@ -175,7 +173,7 @@ function Help({ navigation }) {
  By clicking the “Update Event”, you will be directed to the Update Event page, where you can update the details of an event.
  </Text>
  <Text style={styles.text1}>
- g.       Students
+ g.   Students
  </Text>
  <Text style={styles.text1}>
  Here is a list of all the students in Alphabetical order.
@@ -184,7 +182,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- h.       Society
+ h.   Society
  </Text>
  <Text style={styles.text1}>
  This is a society’s page.
@@ -195,7 +193,7 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- i.         Event
+ i.   Event
  </Text>
  <Text style={styles.text1}>
  On this page you can see the photo and details of an event.
@@ -205,14 +203,14 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
  </Text>
  <Text style={styles.text1}>
- j.         Create Event
+ j.   Create Event
  </Text>
  <Text style={styles.text1}>
  On this page you can create an event by filling in the details in the specific containers.
  By clicking the button “Create event”, the event will be created, and it will appear on the society’s page. You will also be directed to the event page.
  </Text>
  <Text style={styles.text1}>
- k.       Update Event
+ k.   Update Event
  </Text>
  <Text style={styles.text1}>
  On this page you can update an event by filling in the details in the specific containers.
@@ -223,7 +221,7 @@ function Help({ navigation }) {
  3.       University Admin view:
  </Text>
  <Text style={styles.text1}>
- a.       Log In Screen
+ a.   Log In Screen
  </Text>
  <Text style={styles.text1}>
  When first opening the app, the log in page will be loaded. You need to introduce your university credentials: username and password.
@@ -232,7 +230,7 @@ function Help({ navigation }) {
  In case you forgot your password, click the “Forgot Password” button, which will redirect you to the university’s forgot password website.
  </Text>
  <Text style={styles.text1}>
- b.       Home Screen
+ b. Home Screen
  </Text>
  <Text style={styles.text1}>
  This is the main menu of the app.
@@ -243,7 +241,6 @@ function Help({ navigation }) {
  By clicking the “Help” button, you will be directed to the User Manual.
   
        </Text>
-       
       <TouchableHighlight
         onPress={() => navigation.navigate('HomeScreen')}
         style={styles.Soc}>
@@ -255,7 +252,6 @@ function Help({ navigation }) {
  }
  
 function LoginScreen({ navigation }) {
-
   return (
     <View style={styles.container}>
         <Text style={styles.logo}>UniSoc</Text>
@@ -318,6 +314,12 @@ function HomeScreen({ navigation }) {
         onPress={() => navigation.navigate('Students')}
         style={styles.StudentsBt}>
         <Text style={styles.HomeText}>Students</Text>
+      </TouchableHighlight>
+
+      <TouchableHighlight
+        onPress={() => navigation.navigate('Help')}
+        style={styles.HelpBt}>
+        <Text style={styles.HomeText}>Help</Text>
       </TouchableHighlight>
 
       <TouchableHighlight
@@ -398,12 +400,11 @@ function Society ({ navigation }){
 function Societies({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo2}> UniSoc</Text>
 
       <TouchableHighlight
         onPress={() => navigation.navigate('Society')}
         style={styles.Soc}>
-        <Text style={styles.SocText}>Soc1</Text>
+        <Text style={styles.SocText}>Film Society</Text>
       </TouchableHighlight>
       <TouchableHighlight
         onPress={() => navigation.navigate('Soc2')}
@@ -437,10 +438,8 @@ function Societies({ navigation }) {
 function UniAdmin({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo2}> UniSoc</Text>
       <Text style={styles.logo4}> University Admin </Text>
       <Text style={styles.logo3}> University:</Text>
-    
       <TouchableHighlight
         onPress={() => navigation.navigate('Societies')}
         style={styles.Soc}>
@@ -468,8 +467,6 @@ function UniAdmin({ navigation }) {
 function Students({ navigation }) {
   return (
     <View style={styles.container2}>
-      <Text style={styles.logo2}> UniSoc</Text>
-      <Text style={styles.logo4}> Students:</Text>
       <ScrollView>
       <TouchableHighlight
         onPress={() => navigation.navigate('Student1')}
@@ -549,7 +546,6 @@ function Event({ navigation }) {
         style={styles.Home}>
         <Text style={styles.HomeText}>Home</Text>
       </TouchableHighlight>
-
      </View>
   );
 }
@@ -711,7 +707,8 @@ export default class App extends React.Component {
         name = "Students" 
         component = {Students} 
         options = {{
-          headerTransparent: true
+          headerTransparent: false,
+          headerTintColor: "black",
         }}
       />
       <Stack.Screen 
@@ -767,7 +764,8 @@ export default class App extends React.Component {
         name = "Help"
         component = {Help} 
         options = {{
-          headerTransparent: true
+          headerTransparent: false,
+          headerTintColor: "black"
         }}
       />
       </Stack.Navigator>
@@ -831,8 +829,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'center',
-    marginTop: 10,
-    marginBottom: 10,
+    marginTop: -50,
+    marginBottom: 70,
   },
   LogoutBt: {
     width: '40%',
@@ -842,8 +840,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'flex-end',
     justifyContent: 'center',
-    marginTop: 120,
-    marginBottom: 0,
+    marginTop: -90,
+    right: 10,
+  }, 
+  HelpBt: {
+    width: '40%',
+    backgroundColor: '#00ced1',
+    borderRadius: 25,
+    height: 50,
+    alignItems: 'center',
+    alignSelf: 'flex-end',
+    justifyContent: 'center',
+    marginTop: 0,
+    right: 210
   }, 
   HomeText: {
     color: 'white',
@@ -859,7 +868,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 50,
     color: '#20b2aa',
-    marginBottom: 40,
+    marginBottom: 80,
     alignSelf:"flex-start",
   },
   logo3: {
@@ -884,6 +893,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     alignSelf: 'center',
     justifyContent: 'center',
+    top: 20,
     marginTop: 10,
     marginBottom: 10,
   },
@@ -969,5 +979,12 @@ const styles = StyleSheet.create({
     padding: 10,
     color: 'white',
     fontSize: 16
+  },
+  text1: {
+    textAlign: 'center',
+    padding: 10,
+    color: 'white',
+    fontSize: 16,
+    top: -10
   }
 });
