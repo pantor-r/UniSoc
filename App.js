@@ -4,6 +4,9 @@ import { StyleSheet, Text, View, Image, FlatList, TextInput, TouchableOpacity, j
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
+import * as SQLite from 'expo-sqlite';
+
+const db = SQLite.openDatabase("db");
 
 function Help({ navigation }) {
   return (
@@ -633,33 +636,23 @@ export default class App extends React.Component {
 }
   }
 
-  UserRegistrationFunction = () =>{
- 
-    fetch('sql7334667@ec2-52-8-112-233.us-west-1.compute.amazonaws.com', {
-            method: 'POST',
-            headers: {
-                      'Accept': 'application/json',
-                      'Content-Type': 'application/json',
-                    },
-            body: JSON.stringify({
-                  
-            name: this.state.UserName,
-                  
-            email: this.state.UserEmail,
-                  
-            password: this.state.UserPassword
-                  
-                    })
-                  
-            }).then((response) => response.json())
-                    .then((responseJson) => {
-                  
-                    Alert.alert(responseJson);
-                  
-                      }).catch((error) => {
-                          console.error(error);
-                      });
-                }
+  prepareDb() {
+    db.transaction((tx) => {
+      tx.executeSql('CREATE TABLE IF NOT EXISTS user (UserID int(11), nameUser VARCHAR(45), emailUser VARCHAR(45), passwordUser VARCHAR(45));');
+      console.log('table created');
+    }, null, function () {
+      console.log('done?.');
+    });
+  }
+
+  addToDb() {
+    db.transaction((tx) => {
+      tx.executeSql('INSERT INTO user (UserID, nameUser, emailUser, passwordUser) VALUES (1, Raz Pantor, raz@student.liverpool.ac.uk, raz);');
+      console.log('table updated');
+    }, null, function () {
+      console.log('done?.');
+    });
+  }
 
   render(){
     return (
