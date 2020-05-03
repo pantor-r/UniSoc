@@ -4,9 +4,21 @@ import { StyleSheet, Text, View, Image, FlatList, TextInput, TouchableOpacity, j
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {Calendar, CalendarList, Agenda} from 'react-native-calendars';
-import * as SQLite from 'expo-sqlite';
+import * as firebase from 'firebase';
+require("firebase/firestore");
 
-const db = SQLite.openDatabase("db");
+const firebaseConfig = {
+  apiKey: "AIzaSyAgAoLQ1Zqo8ibVybQhL1aS_UNs1TrkkLM",
+  authDomain: "unisoc-443f9.firebaseapp.com",
+  databaseURL: "https://unisoc-443f9.firebaseio.com/",
+  projectID: "unisoc-443f9",
+  storageBucket: "gs://unisoc-443f9.appspot.com",
+  messagingSenderId: "369973102869"
+};
+
+const Firebase = firebase.initializeApp(firebaseConfig);
+
+
 
 function Help({ navigation }) {
   return (
@@ -254,34 +266,53 @@ c.   Profile page
   );
  }
  
-function LoginScreen({ navigation }) {
+class LoginScreen extends React.Component {
+
+  state = {
+    email: '',
+    password: ''
+  }
+
+  handleLogin = () =>{
+        const { email, password } = this.state
+
+        Firebase.auth()
+            .signInWithEmailAndPassword(email, password)
+            .then(() => this.props.navigation.navigate("HomeScreen"))
+            .catch(error => console.log(error))
+  }
+  
+  render() {
   return (
     <View style={styles.container}>
         <Text style={styles.logo}>UniSoc</Text>
         <View style={styles.inputView} >
           <TextInput  
             style={styles.inputText}
-            placeholder="User:" 
+            value={this.state.email}
+            placeholder="Email:" 
             placeholderTextColor="#003f5c"
-            onChangeText={name => this.setState({UserName: name})}/>
+            onChangeText={email => this.setState({ email })}/>
         </View>
         <View style={styles.inputView} >
           <TextInput  
             style = {styles.inputText}
+            value={this.state.password}
             placeholder="Password:" 
             placeholderTextColor="#003f5c"
             secureTextEntry={true}
-            onChangeText={password => this.setState({UserPassword: password})}/>
+            onChangeText={password => this.setState({ password })}/>
         </View>
         <TouchableOpacity>
           <Text style={styles.forgot}>Forgot Password?</Text>
         </TouchableOpacity>
-        <TouchableHighlight onPress={() => navigation.navigate('HomeScreen')}
+        <TouchableHighlight onPress={this.handleLogin}
         style={styles.loginBtn}>
           <Text style={styles.loginText}>LOGIN</Text>
         </TouchableHighlight>
       </View>
   );
+}
 }
 
 function HomeScreen({ navigation }) {
@@ -626,32 +657,9 @@ function DeleteSoc({ navigation }) {
 const Stack = createStackNavigator();
 
 export default class App extends React.Component {
-
-  constructor() {
-    super();
-    this.state = {
-                UserName: '',
-                  UserEmail: '',
-                  UserPassword: '',
-}
-  }
-
-  prepareDb() {
-    db.transaction((tx) => {
-      tx.executeSql('CREATE TABLE IF NOT EXISTS user (UserID int(11), nameUser VARCHAR(45), emailUser VARCHAR(45), passwordUser VARCHAR(45));');
-      console.log('table created');
-    }, null, function () {
-      console.log('done?.');
-    });
-  }
-
-  addToDb() {
-    db.transaction((tx) => {
-      tx.executeSql('INSERT INTO user (UserID, nameUser, emailUser, passwordUser) VALUES (1, Raz Pantor, raz@student.liverpool.ac.uk, raz);');
-      console.log('table updated');
-    }, null, function () {
-      console.log('done?.');
-    });
+  state = {
+    email: '',
+    password: ''
   }
 
   render(){
