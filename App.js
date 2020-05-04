@@ -18,8 +18,6 @@ const firebaseConfig = {
 
 const Firebase = firebase.initializeApp(firebaseConfig);
 
-
-
 function Help({ navigation }) {
   return (
     <View style={styles.container}>
@@ -432,6 +430,7 @@ function Society ({ navigation }){
 }
 
 function Societies({ navigation }) {
+  
   return (
     <View style={styles.container}>
 
@@ -648,7 +647,7 @@ function DeleteSoc({ navigation }) {
       <TouchableHighlight
         onPress={() => navigation.navigate('Delete')}
         style={styles.Soc}>
-        <Text style={styles.SocText}>Create</Text>
+        <Text style={styles.SocText}>Delete</Text>
       </TouchableHighlight>
      </View>
   );
